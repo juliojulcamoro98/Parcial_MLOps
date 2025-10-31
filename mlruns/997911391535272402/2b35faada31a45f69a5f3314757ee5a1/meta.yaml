@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/julio/Documents/Mlops/mlops_project/mlruns/997911391535272402/2b35faada31a45f69a5f3314757ee5a1/artifacts
+end_time: 1761894151532
+entry_point_name: ''
+experiment_id: '997911391535272402'
+lifecycle_stage: active
+run_id: 2b35faada31a45f69a5f3314757ee5a1
+run_name: xgboost_local_run_JJ
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1761894143065
+status: 3
+tags: []
+user_id: julio

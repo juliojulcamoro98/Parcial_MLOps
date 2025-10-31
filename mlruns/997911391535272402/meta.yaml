@@ -1,0 +1,6 @@
+artifact_location: file:///C:/Users/julio/Documents/Mlops/mlops_project/mlruns/997911391535272402
+creation_time: 1761894142003
+experiment_id: '997911391535272402'
+last_update_time: 1761894142003
+lifecycle_stage: active
+name: xgboost_local_experiment_JJ

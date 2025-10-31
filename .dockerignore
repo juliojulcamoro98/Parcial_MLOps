@@ -1,0 +1,14 @@
+# Ignorar entornos virtuales
+.venv
+venv
+
+# Ignorar carpetas ocultas (que empiezan con punto)
+.*
+!Dockerfile
+!.dockerignore
+
+# Ignorar archivos innecesarios
+__pycache__/
+*.pyc
+*.pyo
+*.log

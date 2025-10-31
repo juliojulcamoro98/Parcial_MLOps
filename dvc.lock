@@ -1,0 +1,90 @@
+schema: '2.0'
+stages:
+  preprocessed:
+    cmd: python src\preprocessing.py
+    deps:
+    - path: data\raw\Data_CU_venta.csv
+    - path: src\preprocessing.py
+
+    outs:
+    - path: data\processed\test.csv
+    - path: data\processed\train.csv
+    - path: data\processed\valid.csv
+
+  train:
+    cmd: python src\train.py --force
+    deps:
+    - path: data\processed\test.csv
+      hash: md5
+      md5: ed50c930a5d68e471071c2b609d4b889
+      size: 10209817
+    - path: data\processed\train.csv
+      hash: md5
+      md5: 226696bb3e718ff8ca4df2f35b3b5b21
+      size: 17663670
+    - path: data\processed\valid.csv
+      hash: md5
+      md5: e8f4013005fde925d2c9355ba222e88c
+      size: 7572487
+    - path: src\train.py
+      hash: md5
+      md5: c3107e47f6dc97f0dfc21575199b8d5f
+      size: 3868
+    outs:
+    - path: models\xgb_model.json
+      hash: md5
+      md5: 70f294790f6a65faf0bb46a090d1faff
+      size: 2123982
+    - path: models\xgb_model.pkl
+      hash: md5
+      md5: 342d5ea796a6933020b710f31aa4f24e
+      size: 1427166
+  drift:
+    cmd: python src\monitor_drift.py
+    deps:
+    - path: data\processed\test.csv
+      hash: md5
+      md5: ed50c930a5d68e471071c2b609d4b889
+      size: 10209817
+    - path: data\processed\train.csv
+      hash: md5
+      md5: 226696bb3e718ff8ca4df2f35b3b5b21
+      size: 17663670
+    - path: data\processed\valid.csv
+      hash: md5
+      md5: e8f4013005fde925d2c9355ba222e88c
+      size: 7572487
+    - path: src\monitor_drift.py
+      hash: md5
+      md5: de4059d9b1b32bd77acf7d350ab83b30
+      size: 6802
+    outs:
+    - path: output\drift_data
+      hash: md5
+      md5: 7f78947d143ebe87b383d92cf90e03d9.dir
+      size: 18975
+      nfiles: 2
+  preprocess:
+    cmd: python src\preprocessing.py
+    deps:
+    - path: data\raw\Data_CU_venta.csv
+      hash: md5
+      md5: fdd106a1c6d2b3d1233a5b5527e22dde
+      size: 54525952
+    - path: src\preprocessing.py
+      hash: md5
+      md5: da0deaf1e8b874edfdd0d89101794ac6
+      size: 6488
+    outs:
+    - path: data\processed\test.csv
+      hash: md5
+      md5: ed50c930a5d68e471071c2b609d4b889
+      size: 10209817
+    - path: data\processed\train.csv
+      hash: md5
+      md5: 226696bb3e718ff8ca4df2f35b3b5b21
+      size: 17663670
+    - path: data\processed\valid.csv
+      hash: md5
+      md5: e8f4013005fde925d2c9355ba222e88c
+      size: 7572487

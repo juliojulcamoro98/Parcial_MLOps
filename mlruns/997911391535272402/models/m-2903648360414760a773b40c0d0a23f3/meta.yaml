@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/julio/Documents/Mlops/mlops_project/mlruns/997911391535272402/models/m-2903648360414760a773b40c0d0a23f3/artifacts
+creation_timestamp: 1761894145916
+experiment_id: '997911391535272402'
+last_updated_timestamp: 1761894151522
+model_id: m-2903648360414760a773b40c0d0a23f3
+model_type: null
+name: model
+source_run_id: 2b35faada31a45f69a5f3314757ee5a1
+status: 2
+status_message: null
